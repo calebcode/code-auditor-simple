@@ -18,8 +18,6 @@ def audit_code(file_path):
     output_dir = os.path.join(current_dir, 'output')
     output_path = os.path.join(output_dir, filename)
 
-    # open a new file for writing and appending, create new directory for output if it doesn't already exist, write file_path to file at the beginning
-    # this will be an md file, name it with a guid
     try:
         if not os.path.exists(output_dir):
             os.makedirs(output_dir)
@@ -48,7 +46,6 @@ def audit_code(file_path):
 
             for chunk in stream:
                 md_file.write(chunk['message']['content'])
-                #md_file.write("\n\n")
 
             md_file.write("\n--- Audit Complete ---")
         
